@@ -17,6 +17,6 @@
   */
  
  const app = new Vue({
-     el: '#app',
+     el: '#root',
      render: h => h(App) // mostriamo App all'avvio di Vue
  });
