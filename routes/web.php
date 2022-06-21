@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->group(function () {
-    Route::get('/admin', 'HomeController@index')->name('dashboard'); //admin.dashboard
+    Route::get('/', 'HomeController@index')->name('dashboard'); //admin.dashboard
     
     Route::resource('posts','PostController');//Admin Posts
 });
