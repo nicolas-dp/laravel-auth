@@ -5109,6 +5109,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
   components: {}
@@ -41398,13 +41400,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Work in progress")]),
-      _vm._v(" "),
-      _c("a", { staticClass: "btn bg-primary", attrs: { href: "/admin" } }, [
-        _vm._v("Admin"),
-      ]),
-    ])
+    return _c("div", [_c("h1", [_vm._v("Work In progress")])])
   },
 ]
 render._withStripped = true
@@ -53653,8 +53649,7 @@ var app = new Vue({
   el: '#root',
   render: function render(h) {
     return h(_views_App__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  } // mostriamo App all'avvio di Vue
-
+  }
 });
 
 /***/ }),
