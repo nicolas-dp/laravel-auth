@@ -1,15 +1,17 @@
 <template>
 
     <div>
-        <h1>Work In progress</h1>
+        
+        <work-in-progress></work-in-progress>
     </div>
 
 </template>
 
 
 <script>
+import WorkInProgress from '../components/WorkInProgress';
 export default {
     name: 'App',
-    components: {}
+    components: { WorkInProgress }
 }
 </script>

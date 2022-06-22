@@ -13,20 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Auth::routes();
 
-Route::middleware('auth')->namespace('Admin')->name('admin.')->prefix('admin')->group(function () {
-    Route::get('/', 'HomeController@index')->name('dashboard'); //admin.dashboard
-    Route::get('/dashboard', function(){
-            return view('admin.dashboard');
-    })->name('dashboard'); //admin.dashboard
-    Route::resource('posts','PostController');//Admin Posts
+
+Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
+    // Admin Dashboard
+    Route::get('/', 'HomeController@index')->name('dashboard');
+    // Admin posts
+    Route::resource('posts', 'PostController')->parameters([
+        'posts' => 'post:slug'
+    
+    ]);
 });
 
+// inseriamola come ultima rotta
+// alla fine del file web.php
+Route::get("{any?}", function () {
+    return view("guest.home");
+})->where("any", ".*");
 
 
-//inseriamola come ultima rotta
 
-Route::get('{any?}', function() {
-    return view('guest.home');
-})->where('any', '.*');
+
+/* 
+- Close registration
+- Model: Category + Table: Categories + Controller: Admin/CategoryCotroller
+- Model: Tag + Table: tags + Controller: Admin/TagCotroller
+*/

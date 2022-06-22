@@ -6,12 +6,12 @@
 
 <h2>Edit {{$post->title}}</h2>
 @include('partials.errors')
-<form action="{{route('admin.posts.update', $post->id)}}" method="post">
+<form action="{{route('admin.posts.update', $post->slug)}}" method="post">
     @csrf
     @method('PUT')
     <div class="mb-4">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="Learn php article" aria-describedby="titleHelper" value="{{old('title', $post->title)}}">
+        <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" aria-describedby="titleHelper" value="{{old('title', $post->title)}}">
         <small id="titleHelper" class="text-muted">Type the post title, max: 150 carachters</small>
     </div>
     <!-- TODO: Change to input type file -->
